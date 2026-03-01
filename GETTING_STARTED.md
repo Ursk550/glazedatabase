@@ -2,6 +2,16 @@
 
 Welcome! This guide will help you view and use the GlazeBalance app step by step.
 
+## 📸 What Does It Look Like?
+
+Here's what you'll see when you open the app:
+
+![GlazeBalance App](https://github.com/user-attachments/assets/13ea6b43-b97b-4214-b192-cd14e8b4c390)
+
+The app features a clean, intuitive interface for ceramic glaze chemistry calculations with recipe editing, chemistry analysis, limit formula checks, and smart suggestions.
+
+---
+
 ## 🌐 Option 1: View the Live Deployed Version (Easiest!)
 
 The app is **already deployed and running** on GitHub Pages. You can access it right now:
@@ -11,10 +21,14 @@ The app is **already deployed and running** on GitHub Pages. You can access it r
 **That's it!** Just click the link above and you'll see the live app running in your browser.
 
 #### What You'll See:
-- The GlazeBalance app interface
+
+![GlazeBalance App Screenshot](https://github.com/user-attachments/assets/13ea6b43-b97b-4214-b192-cd14e8b4c390)
+
+- The GlazeBalance app interface with a beautiful gradient header
 - Recipe editor for creating glaze formulations
 - Tabs for Chemistry, Limits, Suggestions, and Test Logs
 - Sample materials already loaded (Silica, Kaolin, Feldspar, etc.)
+- Pre-loaded with the classic "Leach 4321 Base" recipe as an example
 - All features work offline after the first visit
 
 #### How It Works:
