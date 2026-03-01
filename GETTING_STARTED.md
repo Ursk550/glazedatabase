@@ -18,9 +18,15 @@ The app **can be deployed** to GitHub Pages.
 
 ### **👉 [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)**
 
-**❗ Getting a 404 Error?** If the link above shows "404 - There isn't a GitHub Pages site here", this means GitHub Pages needs to be enabled first.
+**❗ Getting a 404 Error?** This means GitHub Pages needs to be enabled first.
 
-**👉 [Follow this guide to enable GitHub Pages and deploy your app](./GITHUB_PAGES_SETUP.md)**
+### How to Enable GitHub Pages:
+
+1. Go to your repository on GitHub: https://github.com/Ursk550/glazedatabase
+2. Click **⚙️ Settings** at the top
+3. In the left sidebar, click **📄 Pages**
+4. Under "Build and deployment" → **Source**: Select **"GitHub Actions"** from the dropdown
+5. Push to the `main` branch or manually run the workflow from the Actions tab
 
 Once GitHub Pages is enabled and the deployment completes, you'll be able to access the live app!
 
