@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Silica",
+    "description": "Pure silica (flint)",
+    "oxideAnalysis": {
+      "SiO2": 99.5,
+      "Al2O3": 0.3,
+      "Fe2O3": 0.1
+    },
+    "loi": 0.1
+  },
+  {
+    "name": "EPK Kaolin",
+    "description": "Edgar Plastic Kaolin - primary clay",
+    "oxideAnalysis": {
+      "SiO2": 46.3,
+      "Al2O3": 38.5,
+      "Fe2O3": 0.5,
+      "TiO2": 1.4,
+      "CaO": 0.1,
+      "MgO": 0.2,
+      "K2O": 1.9,
+      "Na2O": 0.1
+    },
+    "loi": 11.0
+  },
+  {
+    "name": "Ball Clay",
+    "description": "OM4 Ball Clay",
+    "oxideAnalysis": {
+      "SiO2": 52.0,
+      "Al2O3": 32.0,
+      "Fe2O3": 1.0,
+      "TiO2": 1.5,
+      "CaO": 0.3,
+      "MgO": 0.5,
+      "K2O": 2.0,
+      "Na2O": 0.2
+    },
+    "loi": 10.5
+  },
+  {
+    "name": "Whiting",
+    "description": "Calcium Carbonate",
+    "oxideAnalysis": {
+      "CaO": 56.0,
+      "MgO": 0.3
+    },
+    "loi": 43.7
+  },
+  {
+    "name": "Dolomite",
+    "description": "Calcium Magnesium Carbonate",
+    "oxideAnalysis": {
+      "CaO": 30.4,
+      "MgO": 21.8,
+      "SiO2": 0.5
+    },
+    "loi": 47.3
+  },
+  {
+    "name": "Wollastonite",
+    "description": "Calcium Silicate",
+    "oxideAnalysis": {
+      "SiO2": 51.5,
+      "CaO": 47.0,
+      "Al2O3": 0.5,
+      "Fe2O3": 0.5,
+      "MgO": 0.3
+    },
+    "loi": 0.2
+  },
+  {
+    "name": "Nepheline Syenite",
+    "description": "Feldspathoid - flux and alumina source",
+    "oxideAnalysis": {
+      "SiO2": 60.0,
+      "Al2O3": 23.5,
+      "K2O": 5.0,
+      "Na2O": 10.0,
+      "CaO": 0.7,
+      "Fe2O3": 0.1
+    },
+    "loi": 0.7
+  },
+  {
+    "name": "Custer Feldspar",
+    "description": "Potassium Feldspar",
+    "oxideAnalysis": {
+      "SiO2": 68.5,
+      "Al2O3": 17.0,
+      "K2O": 10.0,
+      "Na2O": 3.0,
+      "CaO": 0.3,
+      "Fe2O3": 0.1,
+      "MgO": 0.1
+    },
+    "loi": 1.0
+  },
+  {
+    "name": "Ferro Frit 3134",
+    "description": "Boron frit - low expansion",
+    "oxideAnalysis": {
+      "SiO2": 57.0,
+      "B2O3": 14.5,
+      "Al2O3": 10.5,
+      "CaO": 16.5,
+      "Na2O": 1.5
+    },
+    "loi": 0.0
+  },
+  {
+    "name": "Ferro Frit 3124",
+    "description": "Boron frit - higher sodium",
+    "oxideAnalysis": {
+      "SiO2": 55.0,
+      "B2O3": 15.0,
+      "Al2O3": 9.0,
+      "CaO": 14.0,
+      "Na2O": 7.0
+    },
+    "loi": 0.0
+  },
+  {
+    "name": "Gerstley Borate",
+    "description": "Natural calcium borate",
+    "oxideAnalysis": {
+      "SiO2": 23.0,
+      "B2O3": 25.0,
+      "CaO": 22.0,
+      "MgO": 7.0,
+      "Na2O": 5.0,
+      "Al2O3": 4.0,
+      "K2O": 2.5
+    },
+    "loi": 11.5
+  }
+]
