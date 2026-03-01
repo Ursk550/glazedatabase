@@ -1,6 +1,6 @@
 // Recipes repository - CRUD operations for recipes
 import { db } from './db';
-import { Recipe } from './materialTypes';
+import type { Recipe } from './materialTypes';
 
 export class RecipesRepo {
   // Get all recipes
@@ -53,8 +53,8 @@ export class RecipesRepo {
   }
 
   // Import recipes from JSON
-  static async importRecipes(recipes: Recipe[]): Promise<number[]> {
-    return await db.recipes.bulkAdd(recipes);
+  static async importRecipes(recipes: Recipe[]): Promise<void> {
+    await db.recipes.bulkAdd(recipes);
   }
 
   // Export all recipes to JSON

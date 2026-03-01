@@ -2,7 +2,7 @@
 import { describe, it, expect } from 'vitest';
 import { calcUMF, calcUMFRatios, verifyFluxUnity } from './calcUMF';
 import { calcOxides } from './calcOxides';
-import { Material, RecipeLine } from '../materials/materialTypes';
+import type { Material, RecipeLine } from '../materials/materialTypes';
 
 describe('calcUMF', () => {
   const testMaterials: Material[] = [

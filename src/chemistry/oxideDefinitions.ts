@@ -1,5 +1,8 @@
 // Oxide definitions and molar masses
-import { OxideKey } from '../materials/materialTypes';
+import type { OxideKey } from '../materials/materialTypes';
+
+// Export OxideKey for use in other modules
+export type { OxideKey };
 
 // Molar masses in g/mol
 export const OXIDE_MOLAR_MASSES: Record<OxideKey, number> = {

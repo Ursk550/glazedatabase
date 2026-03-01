@@ -1,7 +1,7 @@
 // Tests for oxide calculations
 import { describe, it, expect } from 'vitest';
 import { calcOxides, normalizeOxideWeights } from './calcOxides';
-import { Material, RecipeLine } from '../materials/materialTypes';
+import type { Material, RecipeLine } from '../materials/materialTypes';
 
 describe('calcOxides', () => {
   const testMaterials: Material[] = [

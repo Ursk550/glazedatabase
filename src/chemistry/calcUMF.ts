@@ -1,6 +1,6 @@
 // Calculate Unity Molecular Formula (UMF) from oxide weights
-import { OxideAnalysis } from '../materials/materialTypes';
-import { OXIDE_MOLAR_MASSES, FLUX_OXIDES, ALL_OXIDES, OxideKey } from './oxideDefinitions';
+import type { OxideAnalysis } from '../materials/materialTypes';
+import { OXIDE_MOLAR_MASSES, FLUX_OXIDES, ALL_OXIDES } from './oxideDefinitions';
 
 export interface UMF {
   fluxes: OxideAnalysis;

@@ -1,6 +1,6 @@
 // Test Log Component - for recording firing tests
 import React, { useState, useEffect } from 'react';
-import { TestLog } from '../materials/materialTypes';
+import type { TestLog } from '../materials/materialTypes';
 import { db } from '../materials/db';
 
 interface TestLogProps {

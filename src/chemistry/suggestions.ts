@@ -1,6 +1,6 @@
 // Generate adjustment suggestions for glaze recipes
-import { RecipeLine, Material } from '../materials/materialTypes';
-import { UMF, calcUMFRatios } from './calcUMF';
+import type { RecipeLine, Material } from '../materials/materialTypes';
+import type { UMF } from './calcUMF';
 import { calcOxides } from './calcOxides';
 import { calcUMF } from './calcUMF';
 import { normalizeRecipe } from './calcRecipe';

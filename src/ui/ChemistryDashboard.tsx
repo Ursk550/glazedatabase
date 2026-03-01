@@ -1,8 +1,8 @@
 // Chemistry Dashboard Component - displays oxide analysis, UMF, and ratios
 import React from 'react';
-import { OxideWeights } from '../chemistry/calcOxides';
-import { UMF, UMFRatios } from '../chemistry/calcUMF';
-import { ALL_OXIDES, OXIDE_NAMES } from '../chemistry/oxideDefinitions';
+import type { OxideWeights } from '../chemistry/calcOxides';
+import type { UMF, UMFRatios } from '../chemistry/calcUMF';
+import { ALL_OXIDES } from '../chemistry/oxideDefinitions';
 
 interface ChemistryDashboardProps {
   oxideWeights?: OxideWeights;

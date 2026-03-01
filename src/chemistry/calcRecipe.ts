@@ -1,5 +1,5 @@
 // Recipe calculations - normalize and validate recipes
-import { RecipeLine } from '../materials/materialTypes';
+import type { RecipeLine } from '../materials/materialTypes';
 
 export interface NormalizedRecipe {
   lines: RecipeLine[];

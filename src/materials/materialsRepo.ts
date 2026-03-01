@@ -1,6 +1,6 @@
 // Materials repository - CRUD operations for materials
 import { db } from './db';
-import { Material } from './materialTypes';
+import type { Material } from './materialTypes';
 import defaultMaterials from './defaultMaterials.json';
 
 export class MaterialsRepo {
@@ -51,8 +51,8 @@ export class MaterialsRepo {
   }
 
   // Import materials from JSON
-  static async importMaterials(materials: Material[]): Promise<number[]> {
-    return await db.materials.bulkAdd(materials);
+  static async importMaterials(materials: Material[]): Promise<void> {
+    await db.materials.bulkAdd(materials);
   }
 
   // Export all materials to JSON

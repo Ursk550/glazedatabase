@@ -1,6 +1,6 @@
 // Database setup with Dexie
-import Dexie, { Table } from 'dexie';
-import { Material, Recipe, TestLog } from './materialTypes';
+import Dexie, { type Table } from 'dexie';
+import type { Material, Recipe, TestLog } from './materialTypes';
 
 export class GlazeDatabaseDB extends Dexie {
   materials!: Table<Material, number>;

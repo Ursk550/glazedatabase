@@ -1,6 +1,6 @@
 // Calculate total oxide weights from recipe and materials
-import { RecipeLine, Material, OxideAnalysis } from '../materials/materialTypes';
-import { ALL_OXIDES, OxideKey } from './oxideDefinitions';
+import type { RecipeLine, Material, OxideAnalysis } from '../materials/materialTypes';
+import { ALL_OXIDES, type OxideKey } from './oxideDefinitions';
 
 export interface OxideWeights {
   oxides: OxideAnalysis;
@@ -89,5 +89,6 @@ export function normalizeOxideWeights(oxideWeights: OxideAnalysis): OxideAnalysi
 // Get oxide weight percentage
 export function getOxidePercent(oxideWeights: OxideWeights, oxide: OxideKey): number {
   if (oxideWeights.total === 0) return 0;
-  return ((oxideWeights.oxides[oxide] || 0) / oxideWeights.total) * 100;
+  const oxideValue = oxideWeights.oxides[oxide as keyof OxideAnalysis];
+  return ((oxideValue || 0) / oxideWeights.total) * 100;
 }

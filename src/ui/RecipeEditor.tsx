@@ -1,6 +1,6 @@
 // Recipe Editor Component
 import React, { useState, useEffect } from 'react';
-import { RecipeLine, Material } from '../materials/materialTypes';
+import type { RecipeLine, Material } from '../materials/materialTypes';
 import { MaterialsRepo } from '../materials/materialsRepo';
 import { normalizeRecipe, validateRecipe } from '../chemistry/calcRecipe';
 

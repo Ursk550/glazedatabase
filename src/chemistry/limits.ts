@@ -1,5 +1,5 @@
 // Limit formula ranges for different firing ranges
-import { OxideKey } from './oxideDefinitions';
+import { type OxideKey } from './oxideDefinitions';
 
 export interface OxideLimit {
   min: number;

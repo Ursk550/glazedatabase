@@ -1,7 +1,7 @@
 // Suggestions Panel Component - displays adjustment suggestions
 import React, { useState } from 'react';
-import { Suggestion } from '../chemistry/suggestions';
-import { RecipeLine } from '../materials/materialTypes';
+import type { Suggestion } from '../chemistry/suggestions';
+import type { RecipeLine } from '../materials/materialTypes';
 
 interface SuggestionsPanelProps {
   suggestions: Suggestion[];

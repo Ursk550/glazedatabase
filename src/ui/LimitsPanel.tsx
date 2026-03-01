@@ -1,6 +1,6 @@
 // Limits Panel Component - displays limit checks and evaluation
 import React from 'react';
-import { EvaluationResult } from '../chemistry/evaluate';
+import type { EvaluationResult } from '../chemistry/evaluate';
 
 interface LimitsPanelProps {
   evaluation?: EvaluationResult;
@@ -79,20 +79,20 @@ export const LimitsPanel: React.FC<LimitsPanelProps> = ({ evaluation }) => {
           <tbody>
             {evaluation.oxideEvaluations
               .filter(e => e.value > 0 || e.status === 'low')
-              .map((eval, i) => (
-                <tr key={i} className={getStatusClass(eval.status)}>
-                  <td>{eval.oxide}</td>
-                  <td>{eval.value.toFixed(3)}</td>
+              .map((oxideEval, i) => (
+                <tr key={i} className={getStatusClass(oxideEval.status)}>
+                  <td>{oxideEval.oxide}</td>
+                  <td>{oxideEval.value.toFixed(3)}</td>
                   <td>
-                    {eval.limit ? 
-                      `${eval.limit.min.toFixed(2)} - ${eval.limit.max.toFixed(2)}` : 
+                    {oxideEval.limit ? 
+                      `${oxideEval.limit.min.toFixed(2)} - ${oxideEval.limit.max.toFixed(2)}` : 
                       '-'
                     }
                   </td>
                   <td className="status-cell">
-                    <span className="status-icon">{getStatusIcon(eval.status)}</span>
-                    {eval.status !== 'ok' && eval.status !== 'not-present' && (
-                      <span className="status-text">{eval.status}</span>
+                    <span className="status-icon">{getStatusIcon(oxideEval.status)}</span>
+                    {oxideEval.status !== 'ok' && oxideEval.status !== 'not-present' && (
+                      <span className="status-text">{oxideEval.status}</span>
                     )}
                   </td>
                 </tr>
@@ -115,20 +115,20 @@ export const LimitsPanel: React.FC<LimitsPanelProps> = ({ evaluation }) => {
               </tr>
             </thead>
             <tbody>
-              {evaluation.ratioEvaluations.map((eval, i) => (
-                <tr key={i} className={getStatusClass(eval.status)}>
-                  <td>{eval.name}</td>
-                  <td>{eval.value.toFixed(2)} : 1</td>
+              {evaluation.ratioEvaluations.map((ratioEval, i) => (
+                <tr key={i} className={getStatusClass(ratioEval.status)}>
+                  <td>{ratioEval.name}</td>
+                  <td>{ratioEval.value.toFixed(2)} : 1</td>
                   <td>
-                    {eval.min && eval.max ? 
-                      `${eval.min.toFixed(0)} - ${eval.max.toFixed(0)}` : 
+                    {ratioEval.min && ratioEval.max ? 
+                      `${ratioEval.min.toFixed(0)} - ${ratioEval.max.toFixed(0)}` : 
                       '-'
                     }
                   </td>
                   <td className="status-cell">
-                    <span className="status-icon">{getStatusIcon(eval.status)}</span>
-                    {eval.status !== 'ok' && (
-                      <span className="status-text">{eval.status}</span>
+                    <span className="status-icon">{getStatusIcon(ratioEval.status)}</span>
+                    {ratioEval.status !== 'ok' && (
+                      <span className="status-text">{ratioEval.status}</span>
                     )}
                   </td>
                 </tr>

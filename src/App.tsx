@@ -5,7 +5,7 @@ import { ChemistryDashboard } from './ui/ChemistryDashboard';
 import { LimitsPanel } from './ui/LimitsPanel';
 import { SuggestionsPanel } from './ui/SuggestionsPanel';
 import { TestLogComponent } from './ui/TestLog';
-import { RecipeLine, Material, Recipe } from './materials/materialTypes';
+import type { RecipeLine, Material, Recipe } from './materials/materialTypes';
 import { MaterialsRepo } from './materials/materialsRepo';
 import { RecipesRepo } from './materials/recipesRepo';
 import { calcOxides } from './chemistry/calcOxides';
@@ -24,7 +24,6 @@ function App() {
   const [firingRange, setFiringRange] = useState<'low-fire' | 'cone6' | 'cone10'>('cone6');
   const [materials, setMaterials] = useState<Material[]>([]);
   const [recipeName, setRecipeName] = useState('Leach 4321 Base');
-  const [savedRecipes, setSavedRecipes] = useState<Recipe[]>([]);
   const [activeTab, setActiveTab] = useState<'editor' | 'chemistry' | 'limits' | 'suggestions' | 'tests'>('editor');
 
   useEffect(() => {
@@ -35,19 +34,26 @@ function App() {
     await MaterialsRepo.initializeDefaultMaterials();
     const allMaterials = await MaterialsRepo.getAll();
     setMaterials(allMaterials);
-    const recipes = await RecipesRepo.getAll();
-    setSavedRecipes(recipes);
   };
 
-  // Calculate chemistry
-  const oxideResult = calcOxides(recipe, materials);
-  const umfResult = calcUMF(oxideResult.oxideWeights.oxides);
-  const ratios = calcUMFRatios(umfResult.umf);
+  // Calculate chemistry only when materials are loaded
+  const oxideResult = materials.length > 0 
+    ? calcOxides(recipe, materials)
+    : { oxideWeights: { oxides: {}, total: 0 }, errors: ['Loading materials...'] };
+  
+  const umfResult = oxideResult.errors.length === 0 
+    ? calcUMF(oxideResult.oxideWeights.oxides)
+    : { umf: { fluxes: {}, intermediates: {}, glassFormers: {}, fluxTotal: 0 }, moles: {}, errors: oxideResult.errors };
+  
+  const ratios = umfResult.errors.length === 0 
+    ? calcUMFRatios(umfResult.umf)
+    : { SiO2_Al2O3: 0, SiO2_flux: 0, Al2O3_flux: 0 };
+  
   const limitSet = getLimitSet(firingRange);
-  const evaluation = oxideResult.errors.length === 0 && umfResult.errors.length === 0
+  const evaluation = oxideResult.errors.length === 0 && umfResult.errors.length === 0 && materials.length > 0
     ? evaluateUMF(umfResult.umf, ratios, limitSet)
     : undefined;
-  const suggestions = oxideResult.errors.length === 0 && umfResult.errors.length === 0
+  const suggestions = oxideResult.errors.length === 0 && umfResult.errors.length === 0 && materials.length > 0
     ? generateSuggestions(recipe, materials, umfResult.umf)
     : [];
 
@@ -61,8 +67,6 @@ function App() {
       };
       await RecipesRepo.create(recipeToSave);
       setRecipeName(name);
-      const recipes = await RecipesRepo.getAll();
-      setSavedRecipes(recipes);
       alert('Recipe saved!');
     }
   };
@@ -208,7 +212,7 @@ function App() {
         {activeTab === 'chemistry' && (
           <ChemistryDashboard
             oxideWeights={oxideResult.oxideWeights}
-            moles={umfResult.moles}
+            moles={umfResult.moles as Record<string, number>}
             umf={umfResult.umf}
             ratios={ratios}
           />
@@ -229,7 +233,7 @@ function App() {
           <TestLogComponent recipeName={recipeName} />
         )}
 
-        {(oxideResult.errors.length > 0 || umfResult.errors.length > 0) && (
+        {(oxideResult.errors.length > 0 || umfResult.errors.length > 0) && oxideResult.errors[0] !== 'Loading materials...' && (
           <div className="calculation-errors">
             <h3>⚠ Calculation Errors</h3>
             {oxideResult.errors.map((err, i) => (

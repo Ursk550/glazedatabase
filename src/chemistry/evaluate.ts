@@ -1,7 +1,7 @@
 // Evaluate UMF against limit formulas
-import { UMF, UMFRatios } from './calcUMF';
-import { LimitSet, OxideLimit } from './limits';
-import { OxideKey } from './oxideDefinitions';
+import type { UMF, UMFRatios } from './calcUMF';
+import type { LimitSet, OxideLimit } from './limits';
+import { type OxideKey } from './oxideDefinitions';
 
 export type OxideStatus = 'low' | 'ok' | 'high' | 'not-present';
 
@@ -163,16 +163,16 @@ export function evaluateUMF(umf: UMF, ratios: UMFRatios, limitSet: LimitSet): Ev
   let score = 100;
   let issueCount = 0;
 
-  oxideEvaluations.forEach(eval => {
-    if (eval.status === 'low' || eval.status === 'high') {
+  oxideEvaluations.forEach(oxideEval => {
+    if (oxideEval.status === 'low' || oxideEval.status === 'high') {
       issueCount++;
-      if (eval.limit) {
-        const value = eval.value;
-        const { min, max } = eval.limit;
-        if (eval.status === 'low' && min > 0) {
+      if (oxideEval.limit) {
+        const value = oxideEval.value;
+        const { min, max } = oxideEval.limit;
+        if (oxideEval.status === 'low' && min > 0) {
           const deviation = ((min - value) / min) * 100;
           score -= Math.min(20, deviation / 5);
-        } else if (eval.status === 'high') {
+        } else if (oxideEval.status === 'high') {
           const deviation = ((value - max) / max) * 100;
           score -= Math.min(20, deviation / 5);
         }
@@ -180,8 +180,8 @@ export function evaluateUMF(umf: UMF, ratios: UMFRatios, limitSet: LimitSet): Ev
     }
   });
 
-  ratioEvaluations.forEach(eval => {
-    if (eval.status === 'low' || eval.status === 'high') {
+  ratioEvaluations.forEach(ratioEval => {
+    if (ratioEval.status === 'low' || ratioEval.status === 'high') {
       score -= 10;
     }
   });
