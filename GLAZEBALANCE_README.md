@@ -2,6 +2,12 @@
 
 🎨 Ceramic Glaze Chemistry Calculator - A local-first web application for glaze formulation and analysis.
 
+## 🌐 Live Demo
+
+**Try it now**: [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)
+
+The app runs entirely in your browser and works offline after the first visit!
+
 ## Features
 
 - **Recipe Management**: Create, edit, and save glaze recipes with material percentages
