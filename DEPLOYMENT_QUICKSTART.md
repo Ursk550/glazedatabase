@@ -6,9 +6,12 @@ This guide will help you deploy the GlazeBalance app to GitHub Pages in just a f
 
 ✅ You have this repository on GitHub  
 ✅ You have push access to the repository  
-✅ You have merged the deployment configuration to the `main` branch
+✅ You have merged the deployment configuration to the `main` branch  
+❗ **Important**: If you're getting a 404 error, GitHub Pages is not enabled yet. Follow Step 1 below.
 
 ## Step 1: Enable GitHub Pages (One-Time Setup)
+
+**⚠️ If you skip this step, you'll get a 404 error!**
 
 1. Go to your repository on GitHub: https://github.com/Ursk550/glazedatabase
 

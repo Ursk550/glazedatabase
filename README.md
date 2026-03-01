@@ -4,7 +4,9 @@ A local-first web application for ceramic glaze formulation and analysis. Calcul
 
 ## 🌐 Live Demo
 
-**Try it now**: [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)
+**Deployment URL**: [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)
+
+**Getting a 404?** See the [GitHub Pages Setup Guide](./GITHUB_PAGES_SETUP.md) to enable deployment.
 
 The app runs entirely in your browser and works offline after the first visit!
 
@@ -15,6 +17,7 @@ The app runs entirely in your browser and works offline after the first visit!
 ## 📚 Documentation
 
 - **[Getting Started](./GETTING_STARTED.md)** - ⭐ **Start here!** View the app step-by-step
+- **[GitHub Pages Setup](./GITHUB_PAGES_SETUP.md)** - 🔴 Fix 404 error and enable deployment
 - **[GlazeBalance User Guide](./GLAZEBALANCE_README.md)** - Features and usage
 - **[Deployment Quick Start](./DEPLOYMENT_QUICKSTART.md)** - Deploy in 5 minutes
 - **[Deployment Guide](./DEPLOYMENT.md)** - Complete deployment documentation

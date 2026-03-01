@@ -14,11 +14,15 @@ The app features a clean, intuitive interface for ceramic glaze chemistry calcul
 
 ## 🌐 Option 1: View the Live Deployed Version (Easiest!)
 
-The app is **already deployed and running** on GitHub Pages. You can access it right now:
+The app **can be deployed** to GitHub Pages. 
 
 ### **👉 [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)**
 
-**That's it!** Just click the link above and you'll see the live app running in your browser.
+**❗ Getting a 404 Error?** If the link above shows "404 - There isn't a GitHub Pages site here", this means GitHub Pages needs to be enabled first.
+
+**👉 [Follow this guide to enable GitHub Pages and deploy your app](./GITHUB_PAGES_SETUP.md)**
+
+Once GitHub Pages is enabled and the deployment completes, you'll be able to access the live app!
 
 #### What You'll See:
 
