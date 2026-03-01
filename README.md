@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# 🎨 GlazeBalance - Ceramic Glaze Chemistry Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A local-first web application for ceramic glaze formulation and analysis. Calculate oxide totals, Unity Molecular Formula (UMF), evaluate against limit formulas, and get smart adjustment suggestions.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Try it now**: [https://ursk550.github.io/glazedatabase/](https://ursk550.github.io/glazedatabase/)
 
-## React Compiler
+The app runs entirely in your browser and works offline after the first visit!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📚 Documentation
 
-## Expanding the ESLint configuration
+- **[GlazeBalance User Guide](./GLAZEBALANCE_README.md)** - Features and usage
+- **[Deployment Quick Start](./DEPLOYMENT_QUICKSTART.md)** - Deploy in 5 minutes
+- **[Deployment Guide](./DEPLOYMENT.md)** - Complete deployment documentation
+- **[Development Notes](./DEVELOPMENT_NOTES.md)** - Developer guide
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Quick Start
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Run development server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
+
+# Run tests
+npm run test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Key Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🧪 **Chemistry Calculations** - Oxide weights, moles, UMF with flux normalization
+- 📊 **Limit Formulas** - Compare against Low Fire, Cone 6, Cone 10 standards
+- 💡 **Smart Suggestions** - Heuristic adjustments with before/after comparison
+- 💾 **Offline-First** - Uses IndexedDB, works without internet
+- 📤 **Import/Export** - Save and share recipes as JSON
+- 🔬 **Test Logs** - Track firing results
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+- React 19 + TypeScript
+- Vite (build tool)
+- Dexie.js (IndexedDB wrapper)
+- Vitest (testing)
+
+## 📦 Deployment
+
+This app is configured for automatic deployment to GitHub Pages:
+
+1. **Enable GitHub Pages**:
+   - Go to Settings → Pages
+   - Source: Select "GitHub Actions"
+
+2. **Deploy**:
+   - Push to `main` branch
+   - GitHub Actions automatically builds and deploys
+
+See [DEPLOYMENT_QUICKSTART.md](./DEPLOYMENT_QUICKSTART.md) for detailed instructions.
+
+## 🧪 Testing
+
+```bash
+npm run test        # Watch mode
+npm run test:run    # Run once
 ```
+
+8 unit tests covering oxide and UMF calculations with real glaze recipes.
+
+## 📄 License
+
+MIT
+
+## 🤝 Contributing
+
+Contributions welcome! Please ensure tests pass before submitting PRs.
+
+---
+
+Built for potters, by developers who care about ceramic arts 🎨
+
