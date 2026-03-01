@@ -8,8 +8,13 @@ A local-first web application for ceramic glaze formulation and analysis. Calcul
 
 The app runs entirely in your browser and works offline after the first visit!
 
+## 🎯 New Here? Start Here!
+
+**[👉 Getting Started Guide](./GETTING_STARTED.md)** - Step-by-step instructions to view the app (live or locally)
+
 ## 📚 Documentation
 
+- **[Getting Started](./GETTING_STARTED.md)** - ⭐ **Start here!** View the app step-by-step
 - **[GlazeBalance User Guide](./GLAZEBALANCE_README.md)** - Features and usage
 - **[Deployment Quick Start](./DEPLOYMENT_QUICKSTART.md)** - Deploy in 5 minutes
 - **[Deployment Guide](./DEPLOYMENT.md)** - Complete deployment documentation
